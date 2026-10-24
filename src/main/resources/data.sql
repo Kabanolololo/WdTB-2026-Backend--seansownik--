@@ -24,14 +24,8 @@ insert into customer (full_name, registered_on, active, email, phone) values
     ('Ewa Wiśniewska', '2026-10-10', false, 'ewa.wisniewska@example.com', '600500600');
 
 -- ===== LAB 02 · rental =====
--- Powiazanie wypozyczen z filmami i klientami.
-insert into rental (rental_number, rented_on, due_on, total_price, status, film_id, customer_id) values
-    ('WYP-2026-001', '2026-10-20', '2026-10-27', 56.00, 'RENTED',
-     (select id from film where title = 'Incepcja' and director = 'Christopher Nolan'),
-     (select id from customer where email = 'anna.kowalska@example.com')),
-    ('WYP-2026-002', '2026-10-10', '2026-10-13', 19.50, 'RETURNED',
-     (select id from film where title = 'Amelia' and director = 'Jean-Pierre Jeunet'),
-     (select id from customer where email = 'jan.nowak@example.com')),
-    ('WYP-2026-003', '2026-10-01', '2026-10-08', 63.00, 'OVERDUE',
-     (select id from film where title = 'Interstellar' and director = 'Christopher Nolan'),
-     (select id from customer where email = 'ewa.wisniewska@example.com'));
+-- LAB 02: niezależne tabele bez relacji.
+insert into rental (rental_number, rented_on, due_on, total_price, status) values
+    ('WYP-2026-001', '2026-10-20', '2026-10-27', 56.00, 'RENTED'),
+    ('WYP-2026-002', '2026-10-10', '2026-10-13', 19.50, 'RETURNED'),
+    ('WYP-2026-003', '2026-10-01', '2026-10-08', 63.00, 'OVERDUE');
