@@ -54,13 +54,14 @@
     <h3>Zmiany w projekcie</h3>
     <ul>
       <li><b>LAB 01:</b> Zmieniono nazwę projektu na Seansownik, dodano konta zespołu, ustawiono metadane aplikacji oraz przygotowano opis projektu na stronie startowej.</li>
+      <li><b>LAB 02:</b> Dodano encje Film, Customer i Rental oraz dane startowe: po 3 wiersze w tabelach film, customer i rental. Status wypożyczenia jest enumem zapisanym jako tekst, a dane kontaktowe klienta klasą wbudowaną. Dodatkowo powiązano każde wypożyczenie z filmem i klientem relacjami wiele-do-jednego.</li>
     </ul>
     <p class="muted">Na kolejnych laboratoriach dopisujcie tu kolejne punkty.</p>
   </section>
 
   <section class="card">
     <h2>1. Zajrzyjcie do bazy danych</h2>
-    <p>Aplikacja ma wbudowaną bazę H2. Na start jest w niej jedna tabela, <code>user_account</code>, z kontami z pliku <code>data.sql</code>.</p>
+    <p>Aplikacja ma wbudowaną bazę H2. Na start są w niej tabele <code>user_account</code> (konta), <code>film</code> (katalog filmów), <code>customer</code> (klienci) i <code>rental</code> (wypożyczenia), z danymi z pliku <code>data.sql</code>.</p>
     <table>
       <tr><td>JDBC URL</td><td><code>jdbc:h2:file:./data/wdtb</code></td></tr>
       <tr><td>Użytkownik</td><td><code>sa</code></td></tr>

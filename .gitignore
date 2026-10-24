@@ -9,3 +9,9 @@ target/
 # Materiały prowadzącego (wykłady, arkusze z danymi studentów) nie trafiają do repozytorium
 *.pptx
 *.xlsx
+
+# Lokalne narzedzia i pliki robocze
+/work/
+/outputs/
+/docs/superpowers/
+/.superpowers/
