@@ -6,6 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 import java.math.BigDecimal;
 
@@ -31,6 +37,16 @@ public class Film {
 
     @Column(name = "available_copies", nullable = false)
     private Integer availableCopies;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "film_genre",
+            joinColumns = @JoinColumn(name = "film_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    private Set<Genre> genres = new HashSet<>();
+
+    public Set<Genre> getGenres() {
+        return genres;
+    }
 
     protected Film() {
     }
